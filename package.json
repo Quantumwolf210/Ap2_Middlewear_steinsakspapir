@@ -1,7 +1,7 @@
 {
     "name": "ap2-steinsakspapir-middleware",
     "version": "1.0.0",
-    "main": "src/validateChoise.js",
+    "main": "src/validateChoice.js",
     "license" : "MIT",
     "keywords": ["exspress", "middleware", "validation"],
     "description": "exspress middleware for validating playerChoise in a rock-paper-scissors API."
