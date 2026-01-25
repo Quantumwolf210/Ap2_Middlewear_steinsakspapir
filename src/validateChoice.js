@@ -1,10 +1,5 @@
 // "middleware: skjekker om spiller imput er tilatt"
 
-const allowed = new Set ([
-    "rock", "paper", "scissors",
-    "stein", "saks", "papir",
-
-]);
 
 const normalize = (value) => {
     if (typeof value !== "string") return null;
@@ -36,7 +31,7 @@ const normalized = normalize(playerChoise);
 // hvis det er på norsk, normalize() returner engelsk
 // om det allerede er engelsk normalize() returner engelsk
 
-if (!normalized|| !["rock", "paper", "scissors"]. includes(normalized)) {
+if (!normalized || !["rock", "paper", "scissors"].includes(normalized)) {
     return response.status(400).jason({
         error: "invalid playerChoise",
         allowed: ["rock", "paper", "scissors"],
@@ -53,5 +48,6 @@ next();
 
 }
 
-module.exsport = validateChoice;
+module.exports = validateChoice;
+
 
