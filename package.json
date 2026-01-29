@@ -4,6 +4,6 @@
     "main": "src/validateChoice.js",
     "license" : "MIT",
     "keywords": ["exspress", "middleware", "validation"],
-    "description": "exspress middleware for validating playerChoise in a rock-paper-scissors API."
-
+    "description": "exspress middleware for validating playerChoise in a rock-paper-scissors API.",
+    "type": "module"
 }

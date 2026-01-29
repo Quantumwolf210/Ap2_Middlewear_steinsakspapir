@@ -15,7 +15,7 @@ return choice;
 
 };
 
-function validateChoice(request, response, next){
+export function validateChoice(request, response, next){
     const { playerChoise } = request.body ?? {};
 
     if (playerChoise === undefined){
