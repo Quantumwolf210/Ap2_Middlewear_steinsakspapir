@@ -16,26 +16,26 @@ return choice;
 };
 
 export function validateChoice(request, response, next){
-    const { playerChoise } = request.body ?? {};
+    const { playerChoice } = request.body ?? {};
 
-    if (playerChoise === undefined){
+    if (playerChoice === undefined){
         return response.status(400).jason({
-            error: "Missing field: playerChoise",
+            error: "Missing field: playerChoice",
             allowed: ["rock", "paper", "scissors"],
         });
     }
 
 
-const normalized = normalize(playerChoise);
+const normalized = normalize(playerChoice);
 
 // hvis det er på norsk, normalize() returner engelsk
 // om det allerede er engelsk normalize() returner engelsk
 
 if (!normalized || !["rock", "paper", "scissors"].includes(normalized)) {
     return response.status(400).jason({
-        error: "invalid playerChoise",
+        error: "invalid playerChoice",
         allowed: ["rock", "paper", "scissors"],
-        received: playerChoise, 
+        received: playerChoice, 
     });
 
 } 
@@ -43,7 +43,7 @@ if (!normalized || !["rock", "paper", "scissors"].includes(normalized)) {
 
 // putt normalisert valg tilbake på requestuest for downstream handlers
 
-request.body.playerChoise = normalized;
+request.body.playerChoice = normalized;
 next();
 
 }
