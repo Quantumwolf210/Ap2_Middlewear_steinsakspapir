@@ -48,6 +48,6 @@ next();
 
 }
 
-module.exports = validateChoice;
+
 
 
