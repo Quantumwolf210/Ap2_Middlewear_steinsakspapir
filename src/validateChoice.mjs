@@ -19,7 +19,7 @@ export function validateChoice(request, response, next){
     const { playerChoice } = request.body ?? {};
 
     if (playerChoice === undefined){
-        return response.status(400).jason({
+        return response.status(400).json({
             error: "Missing field: playerChoice",
             allowed: ["rock", "paper", "scissors"],
         });
@@ -32,7 +32,7 @@ const normalized = normalize(playerChoice);
 // om det allerede er engelsk normalize() returner engelsk
 
 if (!normalized || !["rock", "paper", "scissors"].includes(normalized)) {
-    return response.status(400).jason({
+    return response.status(400).json({
         error: "invalid playerChoice",
         allowed: ["rock", "paper", "scissors"],
         received: playerChoice, 
